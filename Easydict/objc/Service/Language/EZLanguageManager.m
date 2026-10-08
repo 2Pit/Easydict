@@ -360,6 +360,11 @@ static EZLanguageManager *_instance;
     return [[EZLanguageModel allLanguagesDict] sortedKeys];
 }
 
+- (NSArray<EZLanguage> *)pickerLanguages {
+    NSArray<EZLanguage> *shown = @[ EZLanguageAuto, EZLanguageEnglish, EZLanguageRussian, EZLanguageSerbian ];
+    return [self.allLanguages filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF IN %@", shown]];
+}
+
 // Get language flag emoji according to language, such as "🇨🇳"
 - (NSString *)languageFlagEmoji:(EZLanguage)language {
     EZLanguageModel *lang = [[EZLanguageModel allLanguagesDict] objectForKey:language];

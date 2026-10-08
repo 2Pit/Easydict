@@ -111,7 +111,7 @@ DefineMethodMMMake_m(EZSelectLanguageButton);
 
 - (void)setupMenu {
     EZLanguageManager *languageManager = [EZLanguageManager shared];
-    NSArray *allLanguages = [languageManager allLanguages];
+    NSArray *allLanguages = [languageManager pickerLanguages];
     self.languageDict = [[MMOrderedDictionary alloc] init];
     for (EZLanguage language in allLanguages) {
         NSString *languageName = [languageManager showingLanguageName:language];

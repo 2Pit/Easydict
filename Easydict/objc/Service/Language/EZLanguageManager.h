@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) NSArray<EZLanguage> *preferredLanguages;
 
 @property (nonatomic, copy, readonly) NSArray<EZLanguage> *allLanguages;
+/// Languages offered in the language menus and settings pickers (fork patch). Services keep using allLanguages.
+@property (nonatomic, copy, readonly) NSArray<EZLanguage> *pickerLanguages;
 
 /// <EZLanguageEnglish : 🇬🇧 英语>
 @property (nonatomic, strong, readonly) MMOrderedDictionary *allLanguageFlagDict;

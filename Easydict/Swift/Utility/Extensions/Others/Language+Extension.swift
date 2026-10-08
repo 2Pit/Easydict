@@ -39,7 +39,7 @@ extension Language: CaseIterable {
         Language(rawValue: rawValue as! String)
     }
 
-    public static let allAvailableOptions: [Language] = allCases.filter { language in
+    public static let allAvailableOptions: [Language] = EZLanguageManager.shared().pickerLanguages.filter { language in
         language != .auto && language != .classicalChinese
     }
 
